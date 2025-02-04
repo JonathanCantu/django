@@ -8,6 +8,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name='index'),
     path("elements/", include("elements.urls")),
-    path("demoApp/", include('demoApp.urls')),
 ]
 
