@@ -1,2 +1,2 @@
 # django
-Django Projects Repo
+Django Project Repo
