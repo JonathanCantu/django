@@ -4,16 +4,25 @@
 {% load static %}
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-  content="width=device-width,
-  initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <title>demoApp</title>
+  <title>Periodic Table of the Elements</title>
 </head>
 
 <body>
-  <h1>Hello, World!</h1>
-  <img src="{% static 'images/atom-electrons.gif' %}" class="animated-atom" style="width:120px; margin-bottom:-50px;">
+  <div id='atom-image'>
+    <table style="border: 0">
+      <tr><th><img src="{% static 'images/atom-electrons.gif' %}" class='animated-atom'></th></tr>
+    </table>
+  </div>
+  <div id='pte-table'>
+    <table>
+      <tr><th>Atomic Number</th><th>Element</th><th>Symbol</th><th>Atomic Mass</th></tr>
+    <caption>Periodic Table of the Elements</caption>
+    {% for e in elements %}
+      <tr><td class='col1-td'>{{e.atomic_number}}</td><td class='col2-td'>{{e.symbol}}</td><td class='col3-td'>{{e.element}}</td><td class='col4-td'>{{e.atomic_mass}}</td></tr>
+    {% endfor %}
+    </table>
+  </div>
 </body>
 
 </html>
